@@ -489,6 +489,8 @@ body.no-scroll {
 }
 
 .suggestion {
-    background-color: black;
-    margin : 0;
+    display: flex;
+    background-color: #f8bfb4;
+    width: 100%;
+    height: auto;
 }
