@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>⊹ ˚ Collection Sésame ˚ ⊹</title>    
+    <link rel="icon" type="image/png" href="../images/utilities/icone.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/Main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    
+
+    <!-- Header Dynamique -->
+    <div id="header"></div>
+
+    <div class = "overlay" id="overlay"></div>
+    <!-- Introduction -->
+    <section class="introduction">
+        <h1>⊹ ˚ Collection Sésame ˚ ⊹</h1>
+        <p> Découvrez notre collection de bijoux entièrement confectionnée à la main dans notre atelier au cœur de la
+            capitale.</p>
+        <p> Chez Sésame à Paris nous célébrons la beauté intemporelle à travers des pièces d'une simplicité élégante qui
+            ne se démodent jamais.</p>
+        <p> Chaque bijou de notre collection est méticuleusement fabriqué avec de l'argent 999, un matériau réputé pour
+            sa pureté et son éclat durable. Nos artisans talentueux accordent une attention particulière à chaque
+            détail, créant ainsi des pièces d'une élégance raffinée qui résistent à l'épreuve du temps.</p>
+    </section>
+
+    
+
+    <!-- Section Produits -->
+    <section class="product-section">
+        <div class="filters">
+            <div class="filters-left">
+                <span>Filtre :</span>
+                <select>
+                    <option>Disponibilité</option>
+                    <option>En stock</option>
+                    <option>Rupture</option>
+                </select>
+            </div>
+
+            <div class="filters-right" id="sort-select">
+                <span>Trier par :</span>
+                <select>
+                    <option value="note">Mieux notés</option>
+                    <option value="ventes">Meilleures ventes</option>
+                    <option value="nouveautes">Nouveautés</option>
+                    <option value="prix-croissant">Prix croissant</option>
+                    <option value="prix-decroissant">Prix décroissant</option>
+                </select>
+                <span>21 produits</span>
+            </div>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="pagination" id="pagination"></div>
+    </section>
+
+    <!-- Section Bas de page -->
+    <div id="footer"></div>
+    
+    <!-- Scripts -->
+    <script src="../javas/Product.js"></script>
+    <script src="../javas/Loader.js"></script>
+</body>
+
+</html>

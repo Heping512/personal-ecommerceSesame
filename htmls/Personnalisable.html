@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head> 
+    <meta charset="UTF-8">
+    <title>Personnalisable</title>    
+    <link rel="icon" type="image/png" href="../images/utilities/icone.png">
+    <link rel="stylesheet" href="/styles/Main.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div class = "overlay" id="overlay"></div>
+    <section class = "introduction"> 
+        <h1>˗ˋˏ Personnalisable ˎˊ˗</h1>
+        <p>Découvrez notre collection exclusive de bijoux personnalisables, conçue pour transformer vos idées en pièces uniques. Chaque bijou, fabriqué à la main en argent 999, allie élégance intemporelle et savoir-faire artisanal.</p>
+        <p>Choisissez parmi des bagues et bracelets et laissez libre cours à votre imagination : gravures et motifs sur mesure. Ces créations sur-mesure sont parfaites pour exprimer votre personnalité, célébrer un moment spécial ou offrir un cadeau empreint de sens.</p>
+        <p>Avec cette collection, Sésame à Paris célèbre votre unicité et l'art de l'expression personnelle.</p>
+    </section>
+
+    <!-- Section Produits -->
+    <section class="product-section">
+        <div class="filters">
+            <div class="filters-left">
+                <span>Filtre :</span>
+                <select>
+                    <option>Disponibilité</option>
+                    <option>En stock</option>
+                    <option>Rupture</option>
+                </select>
+            </div>
+
+            <div class="filters-right" id="sort-select">
+                <span>Trier par :</span>
+                <select>
+                    <option value="note">Mieux notés</option>
+                    <option value="ventes">Meilleures ventes</option>
+                    <option value="nouveautes">Nouveautés</option>
+                    <option value="prix-croissant">Prix croissant</option>
+                    <option value="prix-decroissant">Prix décroissant</option>
+                </select>
+                <span>21 produits</span>
+            </div>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="pagination" id="pagination"></div>
+    </section>
+    
+    <div id="footer"></div>
+    
+    <script src="../javas/Loader.js"></script>
+    <script src="../javas/CustomsProducts.js"></script>
+</body>
+</html>
