@@ -28,7 +28,16 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
 }
-
+.overlay {
+    position: fixed;
+    top: 10;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background-color: rgba(0, 0, 0, 0.4); /* voile gris foncé semi-transparent */
+    z-index: 9; /* juste en dessous du menu (menu = 10) */
+    display: none; /* masqué par défaut */
+}
 /*#endregion */
 
 /* #region Top Banner */
@@ -40,14 +49,12 @@ body {
     padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--color-border-dark);
 }
-
 /*#endregion */
 
 /* #region Header */
 .header-container {
     position: relative;
 }
-
 .main-header {
     background-color: var(--color-bg);
     display: flex;
@@ -56,59 +63,33 @@ body {
     padding: var(--spacing-md) var(--spacing-lg);
     border-bottom: 1px solid var(--color-border);
 }
-
 .left-icons i,
 .right-options i {
     font-size: 18px;
     cursor: pointer;
 }
-
 .right-options {
     display: flex;
     align-items: center;
     gap: 15px;
     font-size: var(--font-size-base);
 }
-
 .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
 }
-
 .logo img {
     height: 60px;
     width: auto;
     display: block;
 }
-
 @media (max-width: 768px) {
     .right-options span {
       display: none;
     }
   }
-/*#endregion */
-
-.overlay {
-    position: fixed;
-    top: 10;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - var(--header-height));
-    background-color: rgba(0, 0, 0, 0.4); /* voile gris foncé semi-transparent */
-    z-index: 9; /* juste en dessous du menu (menu = 10) */
-    display: none; /* masqué par défaut */
-}
-/* #region Section - Introduction */
-.introduction {
-    margin: 60px auto;
-    padding: 0 20px;
-    max-width: var(--max-width);
-    font-family: var(--font-main);
-    line-height: 1.8;
-    color: var(--color-text);
-}
 /*#endregion */
 
 /* #region Menu dépliant */
@@ -127,153 +108,32 @@ body {
     transform: translateX(-100%);
     transition: transform var(--transition-fast);
 }
-
 .side-menu.open {
     transform: translateX(0);
 }
-
 body.no-scroll {
     overflow: hidden;
 }
-
 .side-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .side-menu li {
     margin: 12px 0;
 }
-
 .side-menu a {
     text-decoration: none;
     color: var(--color-text);
     font-size: 16px;
     transition: color 0.2s ease;
 }
-
 .side-menu a:hover {
     color: var(--color-text-dark);
     font-weight: bold;
     text-decoration: underline;
 }
-
 /*#endregion */
-
-/* #region Collection Sesame */
-
-/* #region Produits */
-.product-section {
-    margin: 60px auto;
-    padding: 0 20px;
-    max-width: var(--max-width);
-}
-
-.filters {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-size: 14px;
-    color: var(--color-text);
-    margin-bottom: 30px;
-}
-
-.filters select {
-    margin-left: 10px;
-    padding: 6px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-bg);
-    font-family: inherit;
-    cursor: pointer;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.product-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.product-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.product-link {
-    text-decoration: none;
-    color: var(--color-text);
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.product-link:hover img {
-    transform: scale(1.05);
-}
-
-.product-link:hover h4 {
-    text-decoration: underline;
-}
-
-.product-image {
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-}
-
-.product-card h4 {
-    margin: 10px 0 5px;
-    font-size: 16px;
-    font-weight: normal;
-    transition: text-decoration 0.2s;
-}
-
-.product-card p {
-    margin: 0;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-/* #endregion */
-.pagination {
-    text-align: center;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.pagination button {
-    border: none;
-    background: none;
-    font-size: 12px;
-    cursor: pointer;
-    padding: 8px 12px;
-    font-family: inherit;
-    color: var(--color-text);
-}
-
-.pagination button.active {
-    border-bottom: 2px solid var(--color-text);
-    font-weight: bold;
-}
-
-.pagination button:hover {
-    color: var(--color-text-dark);
-}
-/* #endregion */
 
 /* #region Informations */
 .newsletter-footer {
@@ -399,98 +259,3 @@ body.no-scroll {
 
 /* #endregion */
 
-/* #region Section - Conditions */
-.conditions {
-    margin: 60px auto;
-    padding: 0 20px;
-    max-width: var(--max-width);
-    font-family: var(--font-main);
-    line-height: 1.8;
-    color: var(--color-text);
-}
-/*#endregion */
-
-/* #region Section - Confidentialite */
-.confidentialite {
-    margin: 60px auto;
-    padding: 0 20px;
-    max-width: var(--max-width);
-    font-family: var(--font-main);
-    line-height: 1.8;
-    color: var(--color-text);
-}
-/*#endregion */
-
-
-.hero {
-    display: flex;
-    flex-direction: row;
-    height: auto;
-    min-height: 600px;
-    background-color: #f8bfb4;
-    position: relative;
-    overflow: hidden;   
-}
-
-.hero::before,
-.hero::after{
-    content :"";
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex: 1;
-}
-
-.hero::before {
-    background-image: url('../images/utilities/acceuilFond1.png');
-}
-
-.hero::after {
-    background-image: url('../images/utilities/acceuilFond2.png');
-}
-
-.button-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f5c7bb;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 1;
-}
-
-@media screen and (max-width: 768px) {
-    .hero {
-        overflow: visible;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    .hero::before,
-    .hero::after {
-        height: 50vh;
-        width: 100%;
-        display: block;
-        flex: none;
-    }
-
-    .button-box {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.suggestion {
-    display: flex;
-    background-color: #f8bfb4;
-    width: 100%;
-    height: auto;
-}
